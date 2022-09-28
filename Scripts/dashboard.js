@@ -1,11 +1,14 @@
 let allData = JSON.parse(localStorage.getItem('book-list'));
 console.log('allData', allData)
-
+let total=document.getElementById('book-count');
+total.innerText=allData.length;
 let select = document.getElementById('filter');
 displayData(allData,'')
 var value=select.value;
 select.addEventListener('change', () => {
      value = select.value;
+     
+     total.innerText=allData.length;
     displayData(allData, value)
 })
 
